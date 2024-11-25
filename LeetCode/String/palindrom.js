@@ -20,7 +20,6 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 */
 
 var isPalindrome = function (x) {
-  let bol =  false;
   let conToStr =  String(x)
   let leftIndex =  0;
   let rightIndex =  conToStr.length-1

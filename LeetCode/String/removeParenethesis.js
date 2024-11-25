@@ -31,7 +31,6 @@ var minRemoveToMakeValid = function (s) {
   let removeIndices = new Array(s.length).fill(false)
   for (let i = 0; i < s.length; i++) {
     if (s[i] === '(') {
-      console.log(s[i])
       stack.push(i)
     } else if (s[i] === ")") {
       if (stack.length > 0) {
@@ -42,21 +41,22 @@ var minRemoveToMakeValid = function (s) {
     }
   }
   // Mark remaining unmatched opening parentheses for 
-  console.log(removeIndices)
+  console.log(stack)
   while (stack.length > 0) {
     console.log("hello")
     removeIndices[stack.pop()] = true;
   }
 
-  // // Construct the resulting string excluding characters marked for removal
-  // let result = '';
-  // for (let i = 0; i < s.length; i++) {
-  //   if (!removeIndices[i]) {
-  //     result += s[i];
-  //   }
-  // }
+  // Construct the resulting string excluding characters marked for removal
+  let result = '';
+  for (let i = 0; i < s.length; i++) {
+    console.log(s[i])
+    if (!removeIndices[i]) {
+      result += s[i];
+    }
+  }
 
-  // return result;
+  return result;
 };
 
 // console.log(minRemoveToMakeValid("a)b(c)d"))

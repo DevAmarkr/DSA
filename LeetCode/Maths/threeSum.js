@@ -32,7 +32,8 @@ var threeSum = (nums) => {
   let ans = [];
   if (nums.length < 3) return ans;
   nums.sort((a, b) => a - b)
-  console.log(nums)
+
+  
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] > 0) break
     if (i > 0 && nums[i] === nums[i - 1]) continue
